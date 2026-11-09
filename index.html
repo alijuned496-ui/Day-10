@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#260914">
+<title>The Anshika Awards — November 10, 2026</title>
+<style>
+:root{
+  --wine:#260914;--burgundy:#4b1028;--rose:#f4c7d4;--pink:#e99ab4;
+  --gold:#e8c77c;--cream:#fff5e9;--muted:#d8bdc5;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#170710;color:var(--cream);font-family:Georgia,"Times New Roman",serif}
+body{overflow:hidden}
+button{font:inherit}
+#app{min-height:100svh;position:relative;overflow:hidden;background:
+ radial-gradient(ellipse at 50% 10%,rgba(145,43,77,.42),transparent 55%),
+ linear-gradient(145deg,#180711,#3a0c20 58%,#170710)}
+#app:before,#app:after{content:"";position:absolute;top:0;bottom:0;width:clamp(16px,7vw,100px);z-index:2;pointer-events:none;opacity:.78}
+#app:before{left:0;background:repeating-linear-gradient(90deg,#260711 0 9px,#57132b 13px,#2a0815 22px);box-shadow:12px 0 30px #090307}
+#app:after{right:0;background:repeating-linear-gradient(90deg,#2a0815 0 9px,#57132b 13px,#260711 22px);box-shadow:-12px 0 30px #090307}
+.stage{position:relative;z-index:1;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:68px 22px 82px}
+.slide{display:none;width:min(850px,100%);max-height:calc(100svh - 150px);overflow:auto;text-align:center;animation:rise .65s ease both;padding:12px 12px 22px;scrollbar-width:thin;scrollbar-color:#9e6177 transparent}
+.slide.active{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+.eyebrow{font:600 .72rem/1.5 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(2.5rem,8vw,5.8rem);line-height:.98;letter-spacing:.025em;color:var(--gold);text-shadow:0 5px 28px #10030a;margin:22px 0}
+h2{font-size:clamp(2rem,6vw,4rem);line-height:1.05;color:var(--gold);margin:16px 0}
+h3{font-size:clamp(1.35rem,4vw,2rem);color:var(--rose);margin:14px 0}
+p{font-size:clamp(1rem,2.4vw,1.25rem);line-height:1.75;color:#f8e8e8;max-width:680px;margin:14px auto}
+.rule{width:105px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:24px auto}
+.kicker{font: .76rem Arial,sans-serif;letter-spacing:.2em;color:var(--pink);text-transform:uppercase}
+.btn{border:1px solid var(--gold);color:#2b0b18;background:linear-gradient(135deg,#f3d99a,#c99b4c);padding:14px 25px;border-radius:999px;letter-spacing:.12em;font:700 .72rem Arial,sans-serif;cursor:pointer;box-shadow:0 8px 25px #09030766;transition:transform .2s,filter .2s;margin:12px 5px}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn.secondary{background:transparent;color:var(--gold);box-shadow:none}
+.bottom-note{font: .65rem Arial,sans-serif;letter-spacing:.2em;color:#d9b8c4;margin-top:28px}
+.poster{width:min(260px,68vw);height:145px;object-fit:cover;border:1px solid #caa75e88;border-radius:8px;box-shadow:0 18px 45px #09030799;margin:0 auto 20px;display:block}
+.trophy{font-size:clamp(4rem,12vw,7rem);filter:drop-shadow(0 8px 15px #e8c77c44);margin:10px 0}
+.award-card{border:1px solid #d8b76b88;background:linear-gradient(145deg,#ffffff0d,#4a102b66);padding:clamp(22px,5vw,42px);border-radius:18px;max-width:690px;margin:20px auto;box-shadow:inset 0 0 35px #e8c77c0b,0 20px 50px #08020866}
+.winner{font:700 .78rem Arial,sans-serif;letter-spacing:.25em;color:var(--gold);margin:20px 0 8px}
+.quote{font-style:italic}
+.labels{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:25px 0}
+.labels span{border:1px solid #d8b76b77;padding:9px 13px;border-radius:999px;color:var(--rose);font: .7rem Arial,sans-serif;letter-spacing:.1em}
+.envelope-wrap{perspective:900px;margin:30px auto;max-width:300px}
+.envelope{position:relative;width:240px;height:155px;margin:auto;background:#b9874a;border-radius:5px;cursor:pointer;box-shadow:0 15px 40px #08020888;transform-style:preserve-3d}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,#f0d49a,#a66d36);clip-path:polygon(0 0,100% 0,50% 62%);transform-origin:top;transition:transform .8s;z-index:2}
+.envelope:after{content:"";position:absolute;inset:0;background:linear-gradient(35deg,#9d6134,#e3bd78);clip-path:polygon(0 100%,50% 42%,100% 100%)}
+.seal{position:absolute;z-index:3;left:50%;top:47%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#7d1839;color:#f5d99d;border:2px solid #e9c879;font-size:1.3rem}
+.envelope.open:before{transform:rotateX(180deg)}
+.secret{display:none;animation:rise .8s ease both}
+.secret.show{display:block}
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:25px auto;max-width:760px}
+.award-tile{border:1px solid #d8b76b66;background:#ffffff0a;border-radius:12px;padding:18px 12px}
+.award-tile b{display:block;color:var(--gold);font-size:1rem;margin:8px 0}
+.award-tile small{color:var(--muted);font: .65rem Arial,sans-serif;letter-spacing:.12em}
+.controls{position:fixed;z-index:5;bottom:15px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 12px}
+.controls button{border:1px solid #d8b76b88;background:#2c0a19dd;color:var(--gold);border-radius:30px;padding:10px 15px;font: .68rem Arial,sans-serif;letter-spacing:.1em;cursor:pointer}
+#counter{font: .65rem Arial,sans-serif;color:#d9b8c4;min-width:48px;text-align:center}
+.progress{position:fixed;z-index:6;top:0;left:0;height:3px;background:var(--gold);width:0;transition:width .35s}
+#confetti{position:fixed;inset:0;z-index:10;pointer-events:none;overflow:hidden}
+.confetto{position:absolute;top:-15px;width:8px;height:13px;opacity:.95;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110svh) rotate(720deg);opacity:.2}}
+.glow{position:absolute;width:40vw;height:40vw;max-width:500px;max-height:500px;left:50%;top:-25%;transform:translateX(-50%);background:radial-gradient(circle,#f4d28c20,transparent 68%);pointer-events:none}
+
+#countdownGate{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at 50% 28%,#76233f 0%,#3a0c20 42%,#16060e 100%);text-align:center}
+#countdownGate.hidden{display:none}
+.countdown-inner{width:min(680px,100%);padding:32px 18px;border:1px solid #d8b76b88;border-radius:20px;background:linear-gradient(145deg,#ffffff0b,#18071188);box-shadow:0 25px 80px #08020899}
+.countdown-crown{font-size:clamp(3rem,9vw,5rem);margin-bottom:12px}
+.countdown-title{font-size:clamp(2.2rem,8vw,4.8rem);line-height:.98;color:var(--gold);margin:16px 0;text-shadow:0 5px 28px #10030a}
+.countdown-copy{color:#f8e8e8;line-height:1.7;font-size:clamp(1rem,2.4vw,1.2rem);max-width:520px;margin:12px auto 24px}
+.countdown-units{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:540px;margin:28px auto}
+.countdown-unit{padding:16px 6px;border:1px solid #d8b76b77;border-radius:12px;background:#ffffff0a}
+.countdown-number{display:block;font:clamp(1.8rem,6vw,3.2rem)/1.1 Georgia,serif;color:var(--gold);font-variant-numeric:tabular-nums}
+.countdown-label{display:block;margin-top:8px;font:.62rem Arial,sans-serif;letter-spacing:.16em;color:var(--pink)}
+.countdown-date{font:.7rem Arial,sans-serif;letter-spacing:.2em;color:#e7c8d1;text-transform:uppercase}
+@media(max-width:420px){.countdown-inner{padding:25px 12px}.countdown-units{gap:6px}.countdown-unit{padding:13px 3px}.countdown-label{font-size:.54rem;letter-spacing:.1em}}
+
+@media(max-width:600px){.stage{padding:55px 18px 82px}.slide{max-height:calc(100svh - 135px)}.controls{gap:6px}.controls button{padding:10px 11px;font-size:.6rem}#app:before,#app:after{width:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="app">
+ <div class="glow"></div><div class="progress" id="progress"></div>
+
+ <section id="countdownGate" aria-live="polite">
+  <div class="countdown-inner">
+   <div class="countdown-crown">🏆</div>
+   <div class="eyebrow">A very special evening is almost here</div>
+   <h1 class="countdown-title">THE ANSHIKA<br>AWARDS</h1>
+   <div class="rule"></div>
+   <p class="countdown-copy">The curtains are ready. The trophies are waiting. The spotlight is yours.<br><strong>Your ceremony begins at midnight.</strong></p>
+   <div class="countdown-units">
+    <div class="countdown-unit"><span class="countdown-number" id="cdDays">00</span><span class="countdown-label">DAYS</span></div>
+    <div class="countdown-unit"><span class="countdown-number" id="cdHours">00</span><span class="countdown-label">HOURS</span></div>
+    <div class="countdown-unit"><span class="countdown-number" id="cdMinutes">00</span><span class="countdown-label">MINUTES</span></div>
+    <div class="countdown-unit"><span class="countdown-number" id="cdSeconds">00</span><span class="countdown-label">SECONDS</span></div>
+   </div>
+   <div class="countdown-date">10 NOVEMBER 2026 · 12:00 AM · INDIA TIME</div>
+   <div class="bottom-note">PLEASE TAKE YOUR SEAT, MISS ANSHIKA.</div>
+  </div>
+ </section>
+
+ <main class="stage">
+  <section class="slide active" data-title="Invitation">
+   <div class="eyebrow">A very special evening · 2026</div>
+   <div class="rule"></div>
+   <h1>THE ANSHIKA<br>AWARDS</h1>
+   <p>Tonight, there are no ordinary nominees. Every award has one very particular winner.</p>
+   <button class="btn" onclick="goTo(1)">OPEN THE CEREMONY</button>
+   <div class="bottom-note">PLEASE TAKE YOUR SEAT, MISS ANSHIKA.</div>
+  </section>
+
+  <section class="slide" data-title="Grand Opening">
+   <div class="trophy">🏆</div><div class="eyebrow">Ladies and gentlemen</div>
+   <h2>And the winner is...<br><span style="color:var(--rose)">YOU.</span></h2>
+   <p>The lights are on. The audience is waiting. And tonight, we're celebrating someone who doesn't need an award to be special, but deserves a few anyway.</p>
+   <div class="labels"><span>ONE NIGHT</span><span>ONE STAR</span><span>ONE VERY DESERVING WINNER</span></div>
+   <button class="btn" onclick="next()">LET THE AWARDS BEGIN</button>
+  </section>
+
+  <section class="slide" data-title="Main Character">
+   <div class="eyebrow">Category 01 · The big one</div>
+   <div class="award-card"><div class="trophy">👑</div><div class="kicker">The Anshika Awards</div><h2>MAIN CHARACTER<br>OF THE YEAR</h2><div class="rule"></div><h3>Anshika</h3><p class="quote">“For being the person this entire little ceremony was built around. No auditions, no competition, no second place. Just you, being you.”</p></div>
+   <button class="btn" onclick="accept()">ACCEPT YOUR AWARD</button>
+  </section>
+
+  <section class="slide" data-title="Golden Drama Crown">
+   <div class="eyebrow">Category 02 · Audience favourite</div>
+   <div class="award-card"><div class="trophy">🎭</div><div class="kicker">Winner: Anshika!</div><h2>THE GOLDEN<br>DRAMA CROWN</h2><p class="quote">“For bringing full cinematic intensity to even the smallest situations. The expressions, the reactions, the energy — an award-winning performance every single time.”</p></div>
+   <p><small style="color:var(--gold)">The jury has unanimously agreed. No appeals accepted. 😭</small></p>
+   <button class="btn" onclick="accept()">ACCEPT YOUR AWARD</button>
+  </section>
+
+  <section class="slide" data-title="Never-Give-Up">
+   <div class="eyebrow">Category 03 · Strength &amp; spirit</div>
+   <div class="award-card"><div class="trophy">⭐</div><div class="kicker">Winner: Anshika!</div><h2>THE NEVER-GIVE-UP<br>ENERGY AWARD</h2><p class="quote">“For putting effort into a goal that matters to you, especially through this demanding JEE journey. The work you choose to put in deserves to be seen and appreciated — not just the result at the finish line.”</p></div>
+   <p>Your efforts count, even on the days when progress feels slow.</p>
+   <button class="btn" onclick="accept()">ACCEPT YOUR AWARD</button>
+  </section>
+
+  <section class="slide" data-title="Purple Heart">
+   <div class="eyebrow">Category 04 · Purple heart division</div>
+   <div class="award-card"><div class="trophy">💜</div><div class="kicker">Winner: Anshika!</div><h2>MOST DEDICATED<br>ARMY AWARD</h2><p class="quote">“For loving what you love without having to explain it to everyone. For the songs, the seven voices, the inspiration and the comfort BTS has brought into your world.”</p></div>
+   <h3>BORahae 💜</h3><p>Keep enjoying the things that make your eyes light up.</p>
+   <button class="btn" onclick="accept()">ACCEPT YOUR AWARD</button>
+  </section>
+
+  <section class="slide" data-title="Golden Microphone">
+   <div class="eyebrow">Category 05 · A very serious award</div>
+   <div class="award-card"><div class="trophy">🎤</div><div class="kicker">Winner: Anshika!</div><h2>BEST STORYTELLING<br>&amp; YAP SESSIONS</h2><p class="quote">“For proving that a conversation can start anywhere, take several unexpected turns, and somehow become the most entertaining part of the day.”</p></div>
+   <p>The microphone is yours. We know you'll use it.</p>
+   <button class="btn" onclick="accept()">ACCEPT YOUR AWARD</button>
+  </section>
+
+  <section class="slide" data-title="One-of-One">
+   <div class="eyebrow">Category 06 · The one that matters</div>
+   <div class="award-card"><div class="trophy">💗</div><div class="kicker">Winner: Anshika!</div><h2>THE APPRECIATION<br>THAT NEVER EXPIRES</h2><p class="quote">“Your curiosity, your interests, your humour, your determination, and all the little things that make you unmistakably yourself.”</p><p>“You don't need to win anything to deserve appreciation. This award is simply a reminder that you already do.”</p></div>
+   <button class="btn" onclick="accept()">ACCEPT YOUR AWARD</button>
+  </section>
+
+  <section class="slide" data-title="Sealed Envelope">
+   <div class="eyebrow">One last envelope. Open it yourself.</div>
+   <h2>A FINAL<br>SPECIAL RECOGNITION</h2>
+   <p>Every ceremony needs a final special recognition. This one wasn't announced in advance.</p>
+   <div class="envelope-wrap"><div class="envelope" id="envelope" onclick="revealSecret()" role="button" tabindex="0" aria-label="Break the golden seal"><div class="seal">✦</div></div></div>
+   <button class="btn" id="sealBtn" onclick="revealSecret()">BREAK THE SEAL</button>
+   <div class="secret" id="secret">
+    <div class="award-card"><div class="trophy">✨</div><div class="kicker">The final honour</div><h2>THE KEEP-GROWING AWARD</h2>
+     <p class="quote">“For every interest you explore, every dream you chase, every new thing you learn, and every version of yourself you're still discovering.</p>
+     <p>Never make yourself smaller for the world.</p>
+     <p>Keep growing, Anshika. Your interests deserve space, your dreams deserve effort, and you deserve to be celebrated along the way.”</p>
+    </div>
+   </div>
+  </section>
+
+  <section class="slide" data-title="Hall of Fame">
+   <div class="eyebrow">The stars of tonight</div><h2>WELCOME TO YOUR<br>HALL OF FAME</h2>
+   <div class="awards-grid">
+    <div class="award-tile">👑<b>Main Character of the Year</b><small>AWARD 01</small></div>
+    <div class="award-tile">🎭<b>CEO of Being Dramatic</b><small>AWARD 02</small></div>
+    <div class="award-tile">⭐<b>Never-Give-Up Energy Award</b><small>AWARD 03</small></div>
+    <div class="award-tile">💜<b>Most Dedicated ARMY Award</b><small>AWARD 04</small></div>
+    <div class="award-tile">🎤<b>Best Storytelling &amp; Yap Sessions</b><small>AWARD 05</small></div>
+    <div class="award-tile">💗<b>The One-of-One Award</b><small>AWARD 06</small></div>
+    <div class="award-tile">✨<b>The Keep-Growing Award</b><small>AWARD 07</small></div>
+   </div>
+   <p>Seven awards. One winner. A whole lot of reasons to celebrate.</p>
+   <button class="btn" onclick="next()">ONE LAST MOMENT</button>
+  </section>
+
+  <section class="slide" data-title="Final Speech">
+   <div class="eyebrow">The ceremony may end. The appreciation doesn't.</div>
+   <div class="trophy">🌹</div><h2>AND THAT'S A WRAP.</h2>
+   <p>Not because you need to impress anyone. Not because you need another award.</p>
+   <p>Just because there's so much more for you to discover, enjoy, learn and become.</p>
+   <p>Keep being curious. Keep exploring. Keep chasing the things that make you happy.</p>
+   <p>And please, never stop being wonderfully yourself.</p>
+   <div class="rule"></div><h2 style="font-size:clamp(2rem,6vw,3.5rem)">Congratulations,<br>Anshika.</h2>
+   <div class="bottom-note">WITH LOTS OF APPRECIATION · NOVEMBER 10, 2026</div>
+   <button class="btn" onclick="restart()">WATCH AGAIN</button>
+  </section>
+ </main>
+ <nav class="controls" aria-label="Slide navigation">
+  <button onclick="previous()" aria-label="Previous slide">← BACK</button>
+  <span id="counter">01 / 11</span>
+  <button onclick="next()" aria-label="Next slide">NEXT →</button>
+ </nav>
+ <div id="confetti"></div>
+</div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+let current=0;
+const counter=document.getElementById('counter');
+const progress=document.getElementById('progress');
+function show(index){
+ current=Math.max(0,Math.min(slides.length-1,index));
+ slides.forEach((s,i)=>{s.classList.toggle('active',i===current);if(i===current)s.scrollTop=0});
+ counter.textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+ progress.style.width=((current+1)/slides.length*100)+'%';
+}
+function next(){if(current<slides.length-1)show(current+1)}
+function previous(){if(current>0)show(current-1)}
+function goTo(i){show(i);burst(45)}
+function accept(){burst(85);next()}
+function restart(){document.getElementById('secret').classList.remove('show');document.getElementById('envelope').classList.remove('open');document.getElementById('sealBtn').style.display='inline-block';show(0)}
+function revealSecret(){
+ const secret=document.getElementById('secret');
+ if(secret.classList.contains('show'))return;
+ document.getElementById('envelope').classList.add('open');
+ document.getElementById('sealBtn').style.display='none';
+ setTimeout(()=>{secret.classList.add('show');burst(110)},450);
+}
+document.getElementById('envelope').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();revealSecret()}});
+function burst(amount=55){
+ const layer=document.getElementById('confetti');
+ const colors=['#f1d28c','#e9a1b8','#fff1d9','#b85b79','#d8b56a'];
+ for(let i=0;i<amount;i++){
+  const bit=document.createElement('i');bit.className='confetto';
+  bit.style.left=Math.random()*100+'vw';
+  bit.style.background=colors[Math.floor(Math.random()*colors.length)];
+  bit.style.animationDuration=(2.4+Math.random()*2.4)+'s';
+  bit.style.animationDelay=(Math.random()*.45)+'s';
+  bit.style.transform='rotate('+Math.random()*360+'deg)';
+  layer.appendChild(bit);setTimeout(()=>bit.remove(),5200);
+ }
+}
+document.addEventListener('keydown',e=>{
+ if(e.key==='ArrowRight'||e.key==='PageDown'){next()}
+ if(e.key==='ArrowLeft'||e.key==='PageUp'){previous()}
+});
+let touchStartX=0,touchStartY=0;
+document.querySelector('.stage').addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX;touchStartY=e.changedTouches[0].screenY},{passive:true});
+document.querySelector('.stage').addEventListener('touchend',e=>{
+ const dx=e.changedTouches[0].screenX-touchStartX,dy=e.changedTouches[0].screenY-touchStartY;
+ if(Math.abs(dx)>65&&Math.abs(dx)>Math.abs(dy)*1.3){dx<0?next():previous()}
+},{passive:true});
+
+// 10 November 2026, 00:00 in India (UTC+05:30).
+const ceremonyOpensAt = new Date('2026-11-09T18:30:00Z').getTime();
+const countdownGate = document.getElementById('countdownGate');
+let countdownTimer;
+function updateCountdown(){
+ const remaining = ceremonyOpensAt - Date.now();
+ if(remaining <= 0){
+  ['cdDays','cdHours','cdMinutes','cdSeconds'].forEach(id=>document.getElementById(id).textContent='00');
+  countdownGate.classList.add('hidden');
+  clearInterval(countdownTimer);
+  show(0);
+  return;
+ }
+ const days=Math.floor(remaining/86400000);
+ const hours=Math.floor((remaining%86400000)/3600000);
+ const minutes=Math.floor((remaining%3600000)/60000);
+ const seconds=Math.floor((remaining%60000)/1000);
+ document.getElementById('cdDays').textContent=String(days).padStart(2,'0');
+ document.getElementById('cdHours').textContent=String(hours).padStart(2,'0');
+ document.getElementById('cdMinutes').textContent=String(minutes).padStart(2,'0');
+ document.getElementById('cdSeconds').textContent=String(seconds).padStart(2,'0');
+}
+updateCountdown();
+countdownTimer=setInterval(updateCountdown,250);
+
+show(0);
+</script>
+</body>
+</html>
